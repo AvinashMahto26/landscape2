@@ -54,14 +54,20 @@
     <div class="mobile-nav-overlay homepage-mobile-nav" id="mobile-nav-overlay">
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About Us</a>
-        <a href="swimming-pools.html">Projects</a>
-        <a href="swimming-pools.html" class="mobile-sublink">- Swimming Pools</a>
-        <a href="water-fountains.html" class="mobile-sublink">- Water Fountains</a>
-        <a href="sculptures.html" class="mobile-sublink">- Artistic Sculptures</a>
-        <a href="planter-pots.html" class="mobile-sublink">- Planter Pots</a>
-        <a href="gardening.html" class="mobile-sublink">- Gardening</a>
-        <a href="landscape-design.html" class="mobile-sublink">- Landscape Design</a>
-        <a href="living-wall-systems.html" class="mobile-sublink">- Living Wall Systems</a>
+        <div class="mobile-nav-dropdown-group" style="width: 100%; display: flex; flex-direction: column; align-items: stretch;">
+            <div class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('open'); event.stopPropagation();" style="cursor: pointer;">
+                <span>Projects</span> <span style="font-size: 0.75em; margin-left: 6px; display: inline-block; transition: transform 0.3s ease;">▼</span>
+            </div>
+            <div class="mobile-submenu-list">
+                <a href="swimming-pools.html" class="mobile-sublink">Swimming Pools</a>
+                <a href="water-fountains.html" class="mobile-sublink">Water Fountains</a>
+                <a href="sculptures.html" class="mobile-sublink">Artistic Sculptures</a>
+                <a href="planter-pots.html" class="mobile-sublink">Planter Pots</a>
+                <a href="gardening.html" class="mobile-sublink">Gardening</a>
+                <a href="landscape-design.html" class="mobile-sublink">Landscape Design</a>
+                <a href="living-wall-systems.html" class="mobile-sublink">Living Wall Systems</a>
+            </div>
+        </div>
         <a href="contact.html">Contact Us</a>
         <a href="contact.html">Inquire Now</a>
     </div>
@@ -253,10 +259,6 @@
                         <img src="ambius-data/website data/projects/pro1.jpg" alt="Terrace Garden Sanctuary">
                     </div>
                 </div>
-                <div class="big-card-meta">
-                    <h3>Terrace Garden Sanctuary</h3>
-                    <span>LIVING WALL / IRRIGATED</span>
-                </div>
             </a>
 
             <!-- BIG CARD 2: Uses Reveal Type 3 (.anim-center-doors - Double Shutters Parting from Center) -->
@@ -265,10 +267,6 @@
                     <div class="reveal-wrapper anim-center-doors delay-1" style="height: 100%; width: 100%;">
                         <img src="ambius-data/website data/projects/pro2.jpeg" alt="Bungalow Landscape">
                     </div>
-                </div>
-                <div class="big-card-meta">
-                    <h3>Bungalow Landscape Architecture</h3>
-                    <span>BESPOKE / RESIDENTIAL</span>
                 </div>
             </a>
         </div>
@@ -310,10 +308,6 @@
                         <img src="ambius-data/website data/swimming pools/spool1.jpg" alt="Luxury Swimming Pool">
                     </div>
                 </div>
-                <div class="big-card-meta">
-                    <h3>Luxury Residence Pool</h3>
-                    <span>RESIDENTIAL // ESTATE</span>
-                </div>
             </a>
 
             <!-- BIG CARD 2: Uses Reveal Type 1 (.anim-curtain-navy - Navy Wipe) -->
@@ -323,10 +317,6 @@
                         <img src="ambius-data/website data/swimming pools/spool2.jpg" alt="Infinity Edge Pool">
                     </div>
                 </div>
-                <div class="big-card-meta">
-                    <h3>Infinity Edge Sanctuary</h3>
-                    <span>RESORT // ARCHITECTURAL</span>
-                </div>
             </a>
 
             <!-- BIG CARD 3: Uses Reveal Type 3 (.anim-center-doors - Double Center Doors) -->
@@ -335,10 +325,6 @@
                     <div class="reveal-wrapper anim-center-doors delay-2" style="height: 100%; width: 100%;">
                         <img src="ambius-data/website data/swimming pools/spool6.jpeg" alt="Resort Pool">
                     </div>
-                </div>
-                <div class="big-card-meta">
-                    <h3>Custom Estate Swimming Pool</h3>
-                    <span>COMMERCIAL // HOSPITALITY</span>
                 </div>
             </a>
         </div>
@@ -373,10 +359,6 @@
                         <img src="ambius-data/website data/sculptures/sculptures1.png" alt="Metal Sculpture">
                     </div>
                 </div>
-                <div class="big-card-meta">
-                    <h3>Custom Architectural Metal Sculptures</h3>
-                    <span>METAL / BESPOKE</span>
-                </div>
             </a>
 
             <!-- BIG CARD 2: Uses Reveal Type 2 (.anim-iris-circle - Circular Iris Expansion) -->
@@ -386,10 +368,6 @@
                         <img src="ambius-data/website data/sculptures/sculptures2.jpg" alt="FRP Sculpture">
                     </div>
                 </div>
-                <div class="big-card-meta">
-                    <h3>FRP Theme Based Sculptures</h3>
-                    <span>WEATHER-PROOF / ART</span>
-                </div>
             </a>
 
             <!-- BIG CARD 3: Uses Reveal Type 3 (.anim-center-doors - Double Shutters Parting) -->
@@ -398,10 +376,6 @@
                     <div class="reveal-wrapper anim-center-doors delay-2" style="height: 100%; width: 100%;">
                         <img src="ambius-data/website data/sculptures/sculptures3.jpg" alt="Theme Garden Sculpture">
                     </div>
-                </div>
-                <div class="big-card-meta">
-                    <h3>Bespoke Theme Installations</h3>
-                    <span>THEME / INSTALLATION</span>
                 </div>
             </a>
         </div>
