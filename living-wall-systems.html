@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Wall Systems | Ambius Landscape</title>
+    <meta name="description" content="Vertical gardens, bio-walls, and modular green wall installations engineered for indoor air quality and architectural beauty.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== ARCHITECTURAL BLACK LINES DESIGN SYSTEM ===== */
+        .arch-editorial-section {
+            background-color: var(--color-white);
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .arch-grid-row {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            border-bottom: 1px solid #000;
+        }
+        .arch-grid-row:last-child {
+            border-bottom: none;
+        }
+
+        .arch-col-label {
+            border-right: 1px solid #000;
+            padding: 4.5rem 4.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .arch-number {
+            font-family: var(--font-main);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-gray);
+        }
+        .arch-col-label h2 {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            color: var(--color-black);
+            margin-top: 1.5rem;
+            line-height: 1.25;
+        }
+
+        .arch-col-text {
+            padding: 4.5rem 4.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .arch-col-text p {
+            font-size: 1.18rem;
+            color: var(--color-black);
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+        .arch-col-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== ULTRA-PREMIUM ARCHITECTURAL GALLERY (ONLY IMAGES) ===== */
+        .arch-gallery-section {
+            background-color: #F8F9FA;
+            padding: 6rem 0 2rem;
+            border-bottom: 1px solid #000;
+        }
+
+        .arch-gallery-header {
+            padding: 0 5% 3.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid #000;
+            margin-bottom: 5rem;
+        }
+
+        .arch-subtag {
+            display: block;
+            font-family: var(--font-main);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-gray);
+            margin-bottom: 0.75rem;
+        }
+
+        .arch-gallery-header h3 {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            color: #000;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .arch-gallery-header span:not(.arch-subtag) {
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #444;
+            text-transform: uppercase;
+        }
+
+        .arch-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1550px;
+            margin: 0 auto;
+            padding: 0 5% 6rem;
+        }
+
+        .arch-gallery-card {
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            height: 380px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .arch-gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 45px rgba(0, 0, 0, 0.22);
+            border-color: #000;
+        }
+
+        .arch-gallery-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .arch-gallery-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .arch-gallery-card:hover .arch-gallery-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        /* Deep Architectural Bottom Overlay */
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.7;
+            transition: opacity 0.4s ease;
+        }
+
+        .arch-gallery-card:hover .card-overlay {
+            opacity: 0.95;
+        }
+
+        @media (max-width: 1100px) {
+            .arch-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .arch-grid-row {
+                grid-template-columns: 1fr;
+            }
+            .arch-col-label {
+                border-right: none;
+                border-bottom: 1px solid #000;
+                padding: 2.8rem 2rem;
+            }
+            .arch-col-text {
+                padding: 2.8rem 2rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .arch-gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            .arch-gallery-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1-SECOND SOOTHING MINIMALIST LOADING SCREEN -->
+    <div id="ambius-loader">
+        <div class="loader-content">
+            <h1 class="loader-title">Ambius</h1>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         TRANSPARENT NAVBAR
+         ========================================================================== -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="ambius-data/1logo.png" alt="Ambius Logo" class="nav-logo-img" onerror="this.style.display='none'">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li class="nav-dropdown">
+                <a href="swimming-pools.html" class="nav-link active">Projects ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="swimming-pools.html">Swimming Pools</a></li>
+                    <li><a href="water-fountains.html">Water Fountains</a></li>
+                    <li><a href="sculptures.html">Artistic Sculptures</a></li>
+                    <li><a href="planter-pots.html">Planter Pots</a></li>
+                    <li><a href="gardening.html">Gardening</a></li>
+                    <li><a href="landscape-design.html">Landscape Design</a></li>
+                    <li><a href="living-wall-systems.html">Living Wall Systems</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Inquire Now</a>
+        <button class="nav-hamburger" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- MOBILE NAVIGATION OVERLAY -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="swimming-pools.html">Projects</a>
+        <a href="swimming-pools.html" class="mobile-sublink">- Swimming Pools</a>
+        <a href="water-fountains.html" class="mobile-sublink">- Water Fountains</a>
+        <a href="sculptures.html" class="mobile-sublink">- Artistic Sculptures</a>
+        <a href="planter-pots.html" class="mobile-sublink">- Planter Pots</a>
+        <a href="gardening.html" class="mobile-sublink">- Gardening</a>
+        <a href="landscape-design.html" class="mobile-sublink">- Landscape Design</a>
+        <a href="living-wall-systems.html" class="mobile-sublink">- Living Wall Systems</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="contact.html">Inquire Now</a>
+    </div>
+
+    <!-- ==========================================================================
+         ARCHITECTURAL PAGE HERO WITH BACKGROUND IMAGE & BREADCRUMB
+         ========================================================================== -->
+    <header class="page-hero-banner">
+        <img src="ambius-data/website data/projects/pro1.jpg" alt="Living Wall Systems" class="page-hero-bg">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <div class="page-breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <a href="swimming-pools.html" style="color: inherit;">Projects</a> <span>/</span> <span>Living Wall Systems</span>
+            </div>
+            <h1 class="page-hero-title">Living Wall Systems</h1>
+            <p class="page-hero-desc">
+                Vertical bio-walls, automated hydroponic living facades, and interior botanical walls engineered for modern architecture.
+            </p>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         EDITORIAL CONTENT SECTION (BLACK LINES ARCHITECTURAL DESIGN)
+         ========================================================================== -->
+    <section class="arch-editorial-section">
+        <!-- Row 1: Modular Vertical Green Walls -->
+        <div class="arch-grid-row">
+            <div class="arch-col-label">
+                <span class="arch-number">CAPABILITY 01 // VERTICAL BOTANY</span>
+                <h2>Modular Vertical Green Walls</h2>
+            </div>
+            <div class="arch-col-text">
+                <p>
+                    Ambius Landscape engineers modular living wall systems that transform vertical structural surfaces into vibrant, air-purifying botanical facades.
+                </p>
+                <p>
+                    Our bio-walls are constructed with high-density hydroponic root felt and lightweight structural frames that protect base masonry while insulating interiors from thermal gain.
+                </p>
+            </div>
+        </div>
+
+        <!-- Row 2: Automated Nutrient & Drip Irrigation -->
+        <div class="arch-grid-row">
+            <div class="arch-col-label">
+                <span class="arch-number">CAPABILITY 02 // SMART IRRIGATION</span>
+                <h2>Automated Nutrient & Drip Irrigation</h2>
+            </div>
+            <div class="arch-col-text">
+                <p>
+                    Every vertical garden is equipped with automated micro-drip fertigation systems, moisture sensors, and integrated drainage troughs for zero water wastage.
+                </p>
+                <p>
+                    We select shade-tolerant indoor foliage and resilient sun-hardy outdoor plants to maintain year-round vibrancy with minimal maintenance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         ULTRA-PREMIUM ARCHITECTURAL GALLERY (ONLY IMAGES)
+         ========================================================================== -->
+    <section class="arch-gallery-section">
+        <div class="arch-gallery-header">
+            <div class="header-left">
+                <span class="arch-subtag">ARCHITECTURAL PORTFOLIO // 06 INSTALLATIONS</span>
+                <h3>Living Wall Gallery</h3>
+            </div>
+            <div class="header-right">
+                <span>VERTICAL GARDENS // BIO-WALLS // HYDROPONICS // INDOOR</span>
+            </div>
+        </div>
+
+        <div class="arch-gallery-grid">
+            <!-- Wall 1 -->
+            <div class="arch-gallery-card">
+                <div class="arch-gallery-img-wrap">
+                    <img src="ambius-data/website data/projects/pro1.jpg" alt="Living Wall System" loading="lazy">
+                </div>
+                <div class="card-overlay"></div>
+            </div>
+
+            <!-- Wall 2 -->
+            <div class="arch-gallery-card">
+                <div class="arch-gallery-img-wrap">
+                    <img src="ambius-data/website data/projects/pro2.jpeg" alt="Living Wall System" loading="lazy">
+                </div>
+                <div class="card-overlay"></div>
+            </div>
+
+            <!-- Wall 3 -->
+            <div class="arch-gallery-card">
+                <div class="arch-gallery-img-wrap">
+                    <img src="ambius-data/website data/projects/pro3.jpeg" alt="Living Wall System" loading="lazy">
+                </div>
+                <div class="card-overlay"></div>
+            </div>
+
+            <!-- Wall 4 -->
+            <div class="arch-gallery-card">
+                <div class="arch-gallery-img-wrap">
+                    <img src="ambius-data/website data/projects/pro4.jpeg" alt="Living Wall System" loading="lazy">
+                </div>
+                <div class="card-overlay"></div>
+            </div>
+
+            <!-- Wall 5 -->
+            <div class="arch-gallery-card">
+                <div class="arch-gallery-img-wrap">
+                    <img src="ambius-data/website data/projects/pro5.jpeg" alt="Living Wall System" loading="lazy">
+                </div>
+                <div class="card-overlay"></div>
+            </div>
+
+            <!-- Wall 6 -->
+            <div class="arch-gallery-card">
+                <div class="arch-gallery-img-wrap">
+                    <img src="ambius-data/website data/projects/pro6.jpeg" alt="Living Wall System" loading="lazy">
+                </div>
+                <div class="card-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CASA PALERMO ARCHITECTURAL FOOTER
+         ========================================================================== -->
+    <footer class="ed-footer">
+        <div class="ed-footer-grid">
+            <div class="ed-footer-col">
+                <a href="index.html" class="nav-brand" style="margin-bottom: 2rem;">
+                    <img src="ambius-data/1logo.png" alt="Ambius Logo" class="nav-logo-img" onerror="this.style.display='none'">
+                </a>
+                <p>
+                    We've been shaping India's landscape since 2014 under the aegis of renowned landscape Designer Mr. Vinod Mor. Sustainable ways to create beauty, a whole new world, creative ways to harness nature.
+                </p>
+                <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
+                    <a href="https://www.facebook.com/ambiuslandscape/" target="_blank" aria-label="Facebook" style="color: #FFFFFF;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-1.1 0-2 .9-2 2v1h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/ambiuslandscape/" target="_blank" aria-label="Instagram" style="color: #FFFFFF;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.88 3.88 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 2.16c-2.67 0-3.003.01-4.058.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.055-.058 1.388-.058 4.058 0 2.67.01 3.003.058 4.058.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.388.058 4.058.058 2.67 0 3.003-.01 4.058-.058.975-.045 1.504-.207 1.857-.344.467-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.388.058-4.058 0-2.67-.01-3.003-.058-4.058-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.055-.048-1.388-.058-4.058-.058zM12 6.865a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27zm0 2.16a2.975 2.975 0 1 0 0 5.95 2.975 2.975 0 0 0 0-5.95zm5.338-3.205a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@Vinodmor/" target="_blank" aria-label="YouTube" style="color: #FFFFFF;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21.582 6.186a2.684 2.684 0 0 0-1.884-1.9C18.037 3.84 12 3.84 12 3.84s-6.037 0-7.698.446a2.684 2.684 0 0 0-1.884 1.9C2 7.864 2 12 2 12s0 4.136.418 5.814a2.684 2.684 0 0 0 1.884 1.9C5.963 20.16 12 20.16 12 20.16s6.037 0 7.698-.446a2.684 2.684 0 0 0 1.884-1.9C22 16.136 22 12 22 12s0-4.136-.418-5.814zM9.99 15.485V8.515L15.93 12l-5.94 3.485z"/></svg>
+                    </a>
+                    <a href="https://x.com/AmbiusL" target="_blank" aria-label="Twitter/X" style="color: #FFFFFF;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.9 2H22l-6.7 7.7 7.9 10.4h-6.2l-4.8-6.3-5.5 6.3H3.6l7.1-8.1L3.1 2h6.3l4.4 5.8L18.9 2zm-1.1 16.2h1.7L8 3.7H6.2l11.6 14.5z"/></svg>
+                    </a>
+                    <a href="https://share.google/Mscf23kSKN2fpQ67I" target="_blank" aria-label="Google Business" style="color: #FFFFFF;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="ed-footer-col">
+                <h4>Navigation</h4>
+                <ul class="ed-footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="swimming-pools.html">Projects & Works</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="ed-footer-col">
+                <h4>Capabilities</h4>
+                <ul class="ed-footer-links">
+                    <li><a href="swimming-pools.html">Swimming Pools</a></li>
+                    <li><a href="water-fountains.html">Water Fountains</a></li>
+                    <li><a href="landscape-design.html">Landscape Design</a></li>
+                    <li><a href="living-wall-systems.html">Living Wall Systems</a></li>
+                </ul>
+            </div>
+
+            <div class="ed-footer-col">
+                <h4>Headquarters</h4>
+                <p>
+                    <strong>Ambius Landscape</strong><br>
+                    A16, Gopikishan Nagar, Gyatri Nagar,<br>
+                    Jalna, Maharashtra India - Pin 431203
+                </p>
+                <p>
+                    <strong>Phone:</strong><br>
+                    094236 20008 | 9422217511 | 9422233849
+                </p>
+                <p>
+                    <strong>Hours:</strong> Closes soon · 7 pm · Opens 10 am
+                </p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://maps.app.goo.gl/4oX7WUUzMGfr9oxDA" target="_blank" style="color: var(--color-white); text-decoration: underline; font-weight: 600;">View on Google Maps  —&gt;</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="ed-footer-bottom">
+            <p>&copy; 2026 Ambius Landscape. Designed under the aegis of Mr. Vinod Mor.</p>
+            <p>Eco-friendly products blending harmoniously with nature.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         JAVASCRIPT / INTERACTIONS
+         ========================================================================== -->
+    <script src="script.js"></script>
+</body>
+</html>
