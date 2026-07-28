@@ -51,7 +51,10 @@ html {
     font-size: 16px;
     background-color: var(--color-white);
     color: var(--color-black);
-    overflow-x: hidden;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-x: clip !important;
 }
 
 body {
@@ -59,9 +62,23 @@ body {
     background-color: var(--color-white);
     color: var(--color-black);
     line-height: 1.65;
-    overflow-x: hidden;
-    position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-x: clip !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure no container or section can ever overflow horizontally */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+section, header, footer, nav, .navbar, .hero-carousel, .ed-footer, .dedicated-offering-section, .editorial-stats-section, .editorial-process-section, .big-images-row-2, .big-images-row-3 {
+    max-width: 100% !important;
 }
 
 /* ==========================================================================
@@ -71,7 +88,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: var(--color-white);
     display: flex;
@@ -1834,6 +1851,14 @@ body {
 
 /* --- MOBILE (max-width: 768px) --- */
 @media (max-width: 768px) {
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        overflow-x: clip !important;
+        position: relative !important;
+    }
+
     /* Show hamburger, hide desktop nav */
     .nav-hamburger {
         display: flex;
