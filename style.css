@@ -2590,3 +2590,333 @@ section, header, footer, nav, .navbar, .hero-carousel, .ed-footer, .dedicated-of
         max-height: 72vh;
     }
 }
+
+/* ==========================================================================
+   UNIVERSAL LUXURY ARCHITECTURAL CTA SECTION (WITH BACKGROUND IMAGE)
+   ========================================================================== */
+.luxury-page-cta-section {
+    position: relative;
+    width: 100%;
+    padding: 7rem 5%;
+    overflow: hidden;
+    background-color: #080C12;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.luxury-cta-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.luxury-cta-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: brightness(0.75) contrast(1.05);
+}
+
+.luxury-page-cta-section:hover .luxury-cta-bg-img {
+    transform: scale(1.05);
+}
+
+.luxury-cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(8, 12, 18, 0.88) 0%, rgba(12, 18, 28, 0.78) 50%, rgba(8, 12, 18, 0.88) 100%);
+    z-index: 2;
+}
+
+.luxury-cta-container {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.luxury-cta-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 4.5rem 5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.luxury-cta-card:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 30px 75px rgba(0, 0, 0, 0.6);
+}
+
+.luxury-cta-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.luxury-cta-tag {
+    font-family: var(--font-main);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #D4AF37;
+    margin-bottom: 1.5rem;
+}
+
+.luxury-cta-left h2 {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.luxury-cta-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    padding-left: 4rem;
+}
+
+.luxury-cta-right p {
+    font-family: var(--font-main);
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.luxury-cta-btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+.btn-luxury-cta {
+    display: inline-block;
+    padding: 1.3rem 2.8rem;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #FFFFFF;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.btn-luxury-cta:hover {
+    background-color: transparent;
+    color: #FFFFFF;
+    border-color: #D4AF37;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
+}
+
+.luxury-cta-call {
+    font-family: var(--font-main);
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: 0.02em;
+}
+
+.luxury-cta-call a {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.luxury-cta-call a:hover {
+    color: #D4AF37;
+}
+
+@media (max-width: 900px) {
+    .luxury-cta-card {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 3.5rem 3rem;
+    }
+    .luxury-cta-right {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+        padding-top: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .luxury-page-cta-section {
+        padding: 4.5rem 4% !important;
+    }
+    .luxury-cta-card {
+        padding: 2.5rem 1.8rem !important;
+        gap: 2rem !important;
+    }
+    .luxury-cta-left h2 {
+        font-size: 2rem !important;
+        line-height: 1.25 !important;
+    }
+    .luxury-cta-right p {
+        font-size: 0.95rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 1.8rem !important;
+    }
+    .btn-luxury-cta {
+        padding: 1.1rem 2rem !important;
+        font-size: 0.92rem !important;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   GLOBAL RESPONSIVE TYPOGRAPHY FOR ALL INTERNAL & PROJECT PAGES
+   (Small screen font scaling for h1-h4, p, and column padding across all pages)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Headings */
+    h1,
+    .page-hero-title,
+    .hero-title {
+        font-size: 2.1rem !important;
+        line-height: 1.25 !important;
+    }
+    h2,
+    .arch-col-label h2,
+    .about-poetic-banner .poetic-text,
+    .heritage-text h2,
+    .philosophy-header h2,
+    .sustainability-row h2,
+    .heritage-row h2,
+    .contact-info-col h2,
+    .contact-form-col h2,
+    .section-intro-block h2 {
+        font-size: 1.65rem !important;
+        line-height: 1.3 !important;
+    }
+    h3,
+    .arch-gallery-header h3,
+    .milestone-item h3,
+    .philosophy-card h3 {
+        font-size: 1.35rem !important;
+        line-height: 1.35 !important;
+    }
+    h4,
+    .arch-gallery-item h4,
+    .contact-detail-item h4 {
+        font-size: 1.05rem !important;
+        line-height: 1.4 !important;
+    }
+    /* Paragraphs & body text */
+    p,
+    .arch-col-text p,
+    .arch-gallery-header p,
+    .heritage-text p,
+    .philosophy-card p,
+    .milestone-item p,
+    .sustainability-content p,
+    .about-editorial-desc,
+    .contact-info-col p,
+    .contact-form-col p,
+    .contact-detail-item p,
+    .page-hero-desc,
+    .hero-subtitle {
+        font-size: 0.94rem !important;
+        line-height: 1.65 !important;
+    }
+
+    /* Padding for project and content columns on mobile */
+    .arch-col-label,
+    .arch-col-text,
+    .heritage-row,
+    .sustainability-row,
+    .philosophy-section,
+    .contact-section-grid {
+        padding: 2.2rem 4% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Headings for very small screens */
+    h1,
+    .page-hero-title,
+    .hero-title {
+        font-size: 1.7rem !important;
+        line-height: 1.25 !important;
+    }
+    h2,
+    .arch-col-label h2,
+    .about-poetic-banner .poetic-text,
+    .heritage-text h2,
+    .philosophy-header h2,
+    .sustainability-row h2,
+    .heritage-row h2,
+    .contact-info-col h2,
+    .contact-form-col h2,
+    .section-intro-block h2 {
+        font-size: 1.42rem !important;
+        line-height: 1.3 !important;
+    }
+    h3,
+    .arch-gallery-header h3,
+    .milestone-item h3,
+    .philosophy-card h3 {
+        font-size: 1.2rem !important;
+        line-height: 1.35 !important;
+    }
+    h4,
+    .arch-gallery-item h4,
+    .contact-detail-item h4 {
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+    }
+    /* Paragraphs for very small screens */
+    p,
+    .arch-col-text p,
+    .arch-gallery-header p,
+    .heritage-text p,
+    .philosophy-card p,
+    .milestone-item p,
+    .sustainability-content p,
+    .about-editorial-desc,
+    .contact-info-col p,
+    .contact-form-col p,
+    .contact-detail-item p,
+    .page-hero-desc,
+    .hero-subtitle {
+        font-size: 0.88rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Compact padding on very small mobile screens */
+    .arch-col-label,
+    .arch-col-text,
+    .heritage-row,
+    .sustainability-row,
+    .philosophy-section,
+    .contact-section-grid {
+        padding: 1.5rem 4% !important;
+    }
+}
