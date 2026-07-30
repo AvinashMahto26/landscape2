@@ -5,11 +5,9 @@
  * 2. 6-Slide Full-Screen Architectural Auto Hero Carousel:
  *    - Vertically centered < and > arrows (extreme Left & Right)
  *    - DYNAMIC GLASSY CIRCULAR DOTS: automatically creates exact number of circular dots based on slides!
- * 3. 4 RADICALLY DISTINCT Image Reveal Animations:
+ * 3. 2 RADICALLY DISTINCT Image Reveal Animations:
  *    - .anim-curtain-navy (Navy Left-to-Right Wipe)
- *    - .anim-iris-circle (Camera Iris Expanding Circle + Blur Clear)
  *    - .anim-center-doors (Double Shutters Parting from Center)
- *    - .anim-curtain-down (Vertical Shutter Dropping Top-to-Bottom)
  *    -> Triggers & Repeats EVERY TIME you scroll into view!
  * 4. Editorial Text Reveal Animations (Repeats on every scroll)
  * 5. Architectural Custom Trailing Cursor with Hover Expansion
@@ -101,12 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoSlide();
     }
 
-    // 3. 4 RADICALLY DISTINCT SIGNATURE REVEAL ANIMATIONS (Repeats EVERY TIME!)
+    // 3. 2 RADICALLY DISTINCT SIGNATURE REVEAL ANIMATIONS (Repeats EVERY TIME!)
     const revealSelectors = [
         '.anim-curtain-navy',
-        '.anim-iris-circle',
-        '.anim-center-doors',
-        '.anim-curtain-down'
+        '.anim-center-doors'
     ].join(', ');
 
     const imageReveals = document.querySelectorAll(revealSelectors);
