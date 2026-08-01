@@ -483,7 +483,8 @@ section, header, footer, nav, .navbar, .hero-carousel, .ed-footer, .dedicated-of
     pointer-events: none;
     z-index: 10000000;
     transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    transition: width 0.3s, height 0.3s, background-color 0.3s, opacity 0.3s;
+    opacity: 0;
 }
 
 .cursor-ring {
@@ -495,7 +496,22 @@ section, header, footer, nav, .navbar, .hero-carousel, .ed-footer, .dedicated-of
     pointer-events: none;
     z-index: 9999999;
     transform: translate(-50%, -50%);
-    transition: width 0.35s ease, height 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
+    transition: width 0.35s ease, height 0.35s ease, border-color 0.35s ease, background-color 0.35s ease, opacity 0.35s ease;
+    opacity: 0;
+}
+
+/* Hide custom cursor completely while loading screen is active */
+body:has(#ambius-loader:not(.loaded)) .cursor-dot,
+body:has(#ambius-loader:not(.loaded)) .cursor-ring {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Ensure normal system cursor during loader */
+#ambius-loader:not(.loaded),
+#ambius-loader:not(.loaded) * {
+    cursor: default !important;
 }
 
 .dark-theme-cursor .cursor-dot {

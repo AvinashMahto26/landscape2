@@ -156,16 +156,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(cursorDot);
         document.body.appendChild(cursorRing);
 
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let ringX = mouseX;
-        let ringY = mouseY;
+        let mouseX = -100;
+        let mouseY = -100;
+        let ringX = -100;
+        let ringY = -100;
 
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
             cursorDot.style.left = `${mouseX}px`;
             cursorDot.style.top = `${mouseY}px`;
+            cursorDot.style.opacity = '1';
+            cursorRing.style.opacity = '1';
         });
 
         const animateCursor = () => {
