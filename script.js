@@ -15,13 +15,19 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. 1-SECOND SOOTHING MINIMALIST LOADING SCREEN ("Ambius")
+    // 1. PREMIUM ANIMATED LOADING SCREEN
     const loader = document.getElementById('ambius-loader');
     if (loader) {
+        document.body.style.overflow = 'hidden';
+        // Let logo animation play out
         setTimeout(() => {
             loader.classList.add('loaded');
             document.body.style.overflow = 'auto';
-        }, 1000); // Exactly 1 second
+            // Remove loader from DOM after exit animation finishes
+            setTimeout(() => {
+                loader.remove();
+            }, 1300);
+        }, 2000);
     }
 
     // 2. HERO CAROUSEL WITH DYNAMIC GLASSY CIRCULAR DOTS & VERTICAL ARROWS
