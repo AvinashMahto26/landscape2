@@ -145,53 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     textReveals.forEach(el => textObserver.observe(el));
 
-    // 5. ARCHITECTURAL CUSTOM CURSOR (Desktop only - skip on touch devices)
-    const isTouchDevice = !window.matchMedia('(pointer: fine)').matches;
-    if (!isTouchDevice) {
-        const cursorDot = document.createElement('div');
-        cursorDot.className = 'cursor-dot';
-        const cursorRing = document.createElement('div');
-        cursorRing.className = 'cursor-ring';
-        
-        document.body.appendChild(cursorDot);
-        document.body.appendChild(cursorRing);
-
-        let mouseX = -100;
-        let mouseY = -100;
-        let ringX = -100;
-        let ringY = -100;
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursorDot.style.left = `${mouseX}px`;
-            cursorDot.style.top = `${mouseY}px`;
-            cursorDot.style.opacity = '1';
-            cursorRing.style.opacity = '1';
-        });
-
-        const animateCursor = () => {
-            ringX += (mouseX - ringX) * 0.18;
-            ringY += (mouseY - ringY) * 0.18;
-            cursorRing.style.left = `${ringX}px`;
-            cursorRing.style.top = `${ringY}px`;
-            requestAnimationFrame(animateCursor);
-        };
-        animateCursor();
-
-        const hoverSelectors = 'a, button, input, textarea, .big-card, .ed-value-card, .hero-circle-dot, .hero-arrow-btn';
-        document.querySelectorAll(hoverSelectors).forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
-
-        // Dark Background Cursor Adaptation
-        const darkSections = document.querySelectorAll('.hero-carousel, .page-hero-banner, .editorial-cta-banner, .ed-footer');
-        darkSections.forEach(sec => {
-            sec.addEventListener('mouseenter', () => document.body.classList.add('dark-theme-cursor'));
-            sec.addEventListener('mouseleave', () => document.body.classList.remove('dark-theme-cursor'));
-        });
-    }
 
     // 6. TRANSPARENT FROSTED GLASS NAVBAR ON SCROLL
     const navbar = document.querySelector('.navbar');
